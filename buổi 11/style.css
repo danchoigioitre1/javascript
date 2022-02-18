@@ -1,0 +1,36 @@
+.bai1 {
+    font-size: 40px;
+    width: 50%;
+    height: 300px;
+    margin: auto;
+    text-align: center;
+     
+    
+    
+    background-color: antiquewhite;
+
+}
+.text1 {transition-duration: 2s;}
+.bai1:hover .text1 {
+    transform: rotate(360deg) scale(3);
+   
+}
+
+
+.bai2 {
+    font-size: 30px;
+    background-color: antiquewhite;
+}
+
+.bai3 {
+    font-size: 40px;
+    background-color: black;
+    color: white;
+}
+
+.bai4 {
+    font-size: 40px;
+    width: 50%;
+    background-color: darkgray;
+    color: black;
+}
