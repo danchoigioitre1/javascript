@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <input type="number" id="st1">
+    <input type="number" id="st2">
+    <button onclick="tong()">a+b</button>
+    <button onclick="hieu()">a-b</button>
+    <button onclick="nhan()">a*b</button>
+    <button onclick="chia()">a/b</button>
+    <div class="kq">
+    <h1>KQ la:</h1>
+    <h1 id="kq"></h1>
+</div>
+    <script>
+        function tong() {
+            let a = +document.getElementById("st1").value,
+                b = +document.getElementById("st2").value;
+                document.getElementById("kq").innerHTML=(a+b)
+        }
+        function hieu() {
+            let a = +document.getElementById("st1").value,
+                b = +document.getElementById("st2").value;
+                document.getElementById("kq").innerHTML=(a-b)
+        }
+        function nhan() {
+            let a = +document.getElementById("st1").value,
+                b = +document.getElementById("st2").value;
+                document.getElementById("kq").innerHTML=(a*b)
+        }
+        function chia() {
+            let a = +document.getElementById("st1").value,
+                b = +document.getElementById("st2").value;
+                document.getElementById("kq").innerHTML=(a/b)
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
