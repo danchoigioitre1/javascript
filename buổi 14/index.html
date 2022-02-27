@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="number1">
+
+    <button onclick="chanle()">xep hang hoc sinh</button>
+    <h1 id="kq"></h1>
+
+
+    <script>
+        function chanle() {
+            let number1 = +document.getElementById("number1").value;
+            if (number1 < 5) { document.getElementById("kq").innerHTML = " dong tien hoc lai di" }
+            if (number1 >= 5 && number1 < 8) { document.getElementById("kq").innerHTML = " tam dc r day" }
+            if (number1 >= 8) { document.getElementById("kq").innerHTML = " qua gioi" }
+
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
