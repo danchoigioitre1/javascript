@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    h1 {
+        font-family: 'Dancing Script', cursive;
+
+    }
+</style>
+
+
+<body>
+    <h1>nhập độ dài 3 cạnh của tam giác</h1>
+    <input type="number" id="1stNumber">
+    <br>
+    <br>
+    <input type="number" id="2ndNumber">
+    <br>
+    <br>
+    <input type="number" id="3thNumber">
+    <br>
+    <br>
+    <button onclick="xetTamGiac()">
+        xét tam giác có 3 cạnh như trên
+    </button>
+    <div style="width:50%;">
+        <h1 id="kq"></h1>
+        <hr>
+    </div>
+
+
+    <script>
+
+
+        function xetTamGiac() {
+
+            let a = +document.getElementById("1stNumber").value,
+                b = +document.getElementById("2ndNumber").value,
+                c = +document.getElementById("3thNumber").value,
+                string = " 3 số đã cho không phải độ dài 3 cạnh của 1 tam giác";
+            if (((a + b) > c) && ((a + c) > b) && ((c + b) > a)) {
+
+                if (a == b && a != c) {
+                    document.getElementById("kq").innerHTML = "3 số đã nhập là độ dài 3 cạnh của 1 tam giác cân"
+                }
+                else if (a == c && a != b) {
+                    document.getElementById("kq").innerHTML = "3 số đã nhập là độ dài 3 cạnh của 1 tam giác cân"
+                }
+                else if (c == b && c != a) {
+                    document.getElementById("kq").innerHTML = "3 số đã nhập là độ dài 3 cạnh của 1 tam giác cân"
+                }
+                else if (a == b && a == c && b == c) {
+                    document.getElementById("kq").innerHTML = "3 số đã nhập là độ dài 3 cạnh của 1 tam giác đều "
+                }
+                else if ((Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2))) {
+                    document.getElementById("kq").innerHTML = "3 số đã nhập là độ dài 3 cạnh của 1 tam giác vuông "
+                }
+                else if ((Math.pow(a, 2) + Math.pow(c, 2) == Math.pow(b, 2))) {
+                    document.getElementById("kq").innerHTML = "3 số đã nhập là độ dài 3 cạnh của 1 tam giác vuông "
+                }
+                else if ((Math.pow(b, 2) + Math.pow(c, 2) == Math.pow(a, 2))) {
+                    document.getElementById("kq").innerHTML = "3 số đã nhập là độ dài 3 cạnh của 1 tam giác vuông "
+                }
+                else { document.getElementById("kq").innerHTML = "3 số đã nhập là độ dài 3 cạnh của 1 tam giác  " }
+
+
+
+
+            } else { document.getElementById("kq").innerHTML = string }
+        }
+        if (a <= 0 || b <= 0 || c < 0) { document.getElementById("kq").innerHTML = string }
+        if (a == "" || c == "" || b == "") { document.getElementById("kq").innerHTML = "yêu cầu nhập độ dài" }
+    </script>
+</body>
+
+</html>
