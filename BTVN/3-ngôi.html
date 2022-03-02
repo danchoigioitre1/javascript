@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <h1>bai 1</h1>
     <input type="number" id="num1">
     <br>
     <input type="number" id="num2">
@@ -21,12 +22,26 @@
                 sum = num1 + num2,
                 kq;
 
-            sum < 4  ? kq='Below' : kq='Over';
+            sum < 4 ? kq = 'Below' : kq = 'Over';
             alert(kq);
 
         }
 
     </script>
+    <h1>bai 2</h1>
+    <script>
+        login = prompt("nhap j do")
+        let message = (login == 'Employee') ?
+            'Hello' :
+            (login == 'Director') ?
+                'Greetings' :
+                (login == '') ?
+                    'No login' :
+                    '';
+                    alert(message)
+    </script>
+
+
 </body>
 
 </html>
