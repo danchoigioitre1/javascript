@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="hoaQua">
+        <option value="1">ổi</option>
+        <option value="2">dưa hấu</option>
+        <option value="3">táo</option>
+        <option value="4">xoài</option>
+        <option value="5">cam</option>
+        <option value="6">chôm chôm</option>
+        <option value="7">măng cụt</option>
+
+
+    </select>
+    <button onclick="priceCheck()">
+        check giá
+    </button>
+    <h1 id="Price"></h1>
+
+    <script>
+        function priceCheck() {
+            let price = document.getElementById("hoaQua").value;
+            let hienThi = document.getElementById("Price");
+            if (price == 1 || price == 2) { hienThi.innerHTML = "Price : 20000 VNĐ/kg" }
+            if (price == 3 || price == 4) { hienThi.innerHTML = "Price : 30000 VNĐ/kg" }
+            if (price == 5 || price == 6) { hienThi.innerHTML = "Price : 40000 VNĐ/kg" }
+            if (price == 7) { document.getElementById("Price").innerHTML = "Price : 50000 VNĐ/kg" }
+        }
+
+    </script>
+</body>
+
+</html>

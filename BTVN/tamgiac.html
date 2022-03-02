@@ -78,9 +78,10 @@
 
 
             } else { document.getElementById("kq").innerHTML = string }
+            if (a <= 0 || b <= 0 || c <= 0) { document.getElementById("kq").innerHTML = string }
+            if (a == "" || c == "" || b == "") { document.getElementById("kq").innerHTML = "yêu cầu nhập độ dài" }
         }
-        if (a <= 0 || b <= 0 || c < 0) { document.getElementById("kq").innerHTML = string }
-        if (a == "" || c == "" || b == "") { document.getElementById("kq").innerHTML = "yêu cầu nhập độ dài" }
+
     </script>
 </body>
 

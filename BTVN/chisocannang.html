@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="nhập cân nặng" id="canNang">
+    <br><br>
+    <input type="text" placeholder="nhập chiều cao" id="chieuCao">
+    <br><br>
+    <button onclick="cal()">
+        tính chỉ số BMI
+    </button>
+    <h1 id="kq"></h1>
+    <script>
+        function cal() {
+            let weight = document.getElementById("canNang").value,
+                height = document.getElementById("chieuCao").value;
+            BMI = (weight / (height * height))
+            kq = document.getElementById("kq");
+            if (weight <= 0 || height <= 0) { kq.innerHTML = "không tính đc chỉ số BMI" }
+            if (weight == "" || height == "") { kq.innerHTML = "nhập thêm dữ liệu" }
+            if (BMI < 16) { kq.innerHTML = "BMI =" + BMI + " : Gầy độ III" }
+        }
+
+
+    </script>
+</body>
+
+</html>
