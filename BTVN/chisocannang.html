@@ -23,9 +23,17 @@
                 height = document.getElementById("chieuCao").value;
             BMI = (weight / (height * height))
             kq = document.getElementById("kq");
-            if (weight <= 0 || height <= 0) { kq.innerHTML = "không tính đc chỉ số BMI" }
-            if (weight == "" || height == "") { kq.innerHTML = "nhập thêm dữ liệu" }
-            if (BMI < 16) { kq.innerHTML = "BMI =" + BMI + " : Gầy độ III" }
+            if (weight <= 0 || height <= 0) { kq.innerHTML = "không tính đc chỉ số BMI" };
+            if (weight == "" || height == "") { kq.innerHTML = "nhập thêm dữ liệu" };
+            if (BMI < 16) { kq.innerHTML = "BMI =" + BMI + " : Gầy độ III" };
+            if (BMI >= 16 && BMI < 17) { kq.innerHTML = "BMI =" + BMI + " : Gầy độ II" };
+            if (BMI >= 17 && BMI < 18.5) { kq.innerHTML = "BMI =" + BMI + " : Gầy độ I" };
+            if (BMI >= 18.5 && BMI < 25) { kq.innerHTML = "BMI =" + BMI + " : Bình thường" };
+            if (BMI >= 25 && BMI < 30) { kq.innerHTML = "BMI =" + BMI + " : Thừa cân" };
+            if (BMI >= 30 && BMI < 35) { kq.innerHTML = "BMI =" + BMI + " : Béo phì độ I" };
+            if (BMI >= 35 && BMI < 40) { kq.innerHTML = "BMI =" + BMI + " : Béo phì độ II" };
+            if (BMI >= 40) { kq.innerHTML = "BMI =" + BMI + " : III" };
+
         }
 
 

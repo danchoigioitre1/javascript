@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>Nhập tháng : <input type="text" id="month"></h3>
+    <button onclick="tinhNgay()">
+        Tính ngày
+    </button>
+
+    <h1 id="kq"></h1>
+
+
+    <script>
+        function tinhNgay() {
+            var month = + document.getElementById("month").value;
+            var day;
+            if (month == "" || month > 12 || month < 1) {
+                document.getElementById("kq").innerHTML = "không hợp lệ"
+            } else {
+                switch (month) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+                        day = 31;
+                        break;
+
+                    case 2:
+                        day = 29;
+                        break;
+
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        day = 30;
+                        break;
+                }
+                document.getElementById("kq").innerHTML = ("Tháng " + month + " có " + day + " ngày");
+            }
+
+        }
+    </script>
+</body>
+
+</html>

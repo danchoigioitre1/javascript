@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <h1>Tính điểm thi đại học khối D</h1>
+
+    <h3>Toán<input type="text" id="toan"></h3>
+    <h3>Văn<input type="text" id="van"></h3>
+    <h3>Anh<input type="text" id="anh"></h3>
+    <select id="plusPoint">
+        <option value="1">KV1</option>
+        <option value="2">KV2</option>
+        <option value="3">KV2-NT</option>
+        <option value="4">KV3</option>
+
+
+    </select> </h3>
+    <button onclick="tinhdiem()">
+        tính điểm khối D
+    </button>
+
+    <h1 style="color: red;">Tổng điểm khối D: <h1 id="tong" style="color: red;"></h1>
+    </h1>
+
+    <script>
+
+
+        function tinhdiem() {
+
+
+            var mathPoint = +document.getElementById("toan").value,
+                literaturePoint = +document.getElementById("van").value,
+                englishPoint = +document.getElementById("anh").value,
+                plusPoint = +document.getElementById("plusPoint").value,
+                diemCong;
+
+
+
+            switch (plusPoint) {
+                case 1:
+                    diemCong = 0.75;
+                    break;
+
+                case 2:
+                    diemCong = 0.5;
+                    break;
+
+                case 3:
+                    diemCong = 0.25;
+                    break;
+
+                case 4:
+                    diemCong = 0;
+                    break;
+
+
+            }
+
+
+
+            var sum = mathPoint + literaturePoint + englishPoint + diemCong;
+            document.getElementById("tong").innerHTML = sum;
+
+
+
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
