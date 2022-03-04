@@ -1,13 +1,20 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-img {
+
+.tank {
     position: relative;
 
-    top: 0px;
-    left: 0px;
     width: 19px;
     height: 19px;
+    z-index: 0;
 
+}
+
+.boom {
+    position: relative;
+    width: 19px;
+    height: 19px;
+left: -19px;
+z-index: 1;
 }
 
 button {

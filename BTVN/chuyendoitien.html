@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+table {
+    border-collapse: collapse;
+    
+}
+td ,tr {border: 2px solid black;}
+
+
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Amount</td>
+            <td>from</td>
+            <td>To</td>
+            <td></td>
+
+
+        </tr>
+
+        <tr>
+            <td> <input type="text" id="in"></td>
+            <td> <select name="" id="select1">
+                    <option value="v">VND</option>
+                    <option value="u">USD</option>
+                </select></td>
+            <td><select name="" id="select2">
+                    <option value="u">USD</option>
+                    <option value="v">VND</option>
+                </select></td>
+            <td> <button onclick="change()">convert</button></td>
+        </tr>
+
+    </table>
+
+
+    <script>
+
+        function change() {
+            var soTien = +document.getElementById("in").value,
+                inPut = document.getElementById("select1").value,
+                outPut = document.getElementById("select2").value;
+
+            if (inPut == outPut) { alert(soTien); }
+            if (inPut == "v" && outPut == "u") { alert(soTien / 24000 + "$"); }
+            if (inPut == "u" && outPut == "v") { alert(soTien * 24000 + "VND"); }
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
