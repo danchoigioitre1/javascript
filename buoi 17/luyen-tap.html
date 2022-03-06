@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto&display=swap"
+        rel="stylesheet">
+
+    <style>
+        h3 {
+            font-family: 'Dancing Script', cursive;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Bai 1 :Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành. <br>
+        <button onclick="bai1()">bai 1</button>
+    </h3>
+    <h3>bai 2 :Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập
+        vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ. <br>
+        <button onclick="bai2()">bai2</button>
+    </h3>
+
+    <h3>bai 3 :Hiển thị ra N(nhập từ bàn phím) số trong dãy fibonacci đầu tiên. <br> <button
+            onclick="bai3()">bai3</button>
+    </h3>
+    <h3>bai 4 : Tìm số đầu tiên trong dãy fibonacci chia hết cho 5. <br> <button onclick="bai4()">bai4</button></h3>
+    <h3>bai 5 : Tính tổng của N(nhập từ bàn phím) số đầu tiên trong dãy fibonacci.
+        <br> <button onclick="bai5()">bai5</button>
+    </h3>
+
+    <h3>bai 6 :Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên. <br> <button
+            onclick="bai6()">bai6</button>
+    </h3>
+    <h3>bai 7 : Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra “Fizz”, 5 thì
+        in ra “Buzz” thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ “FizzBuzz”. <br> <button
+            onclick="bai7()">bai7</button></h3>
+
+    <script>
+        function bai1() {
+            for (i = 1; i <= 100; i++) {
+                document.write(i + '<br>');
+                if (i == 99) {
+                    document.write('da hoan thanh');
+                    break;
+                }
+            }
+
+        }
+
+        function bai2() {
+            var a = prompt('nhap nhiet do')
+            while (a >= 100) {
+                alert('yeu cau giam nhiet do');
+                a = prompt('nhap lai nhiet do');
+            }
+            while (a <= 20) {
+                alert('yeu cau tang nhiet do');
+                a = prompt('nhap lai nhiet do');
+            }
+            alert('nhiet do ban nhap la' + " " + a);
+        }
+
+        function bai3() {
+            var a = +prompt('a=');
+            var x = 0;
+            var y = 1;
+            var z = x + y;
+
+            for (i = 1; i <= a; i++) {
+
+                x = y;
+                y = z;
+                z = x + y;
+
+                document.write(" <br> " + x)
+
+            }
+        }
+        function bai4() {
+            var a = +prompt('a=');
+            var x = 0;
+            var y = 1;
+            var z = x + y;
+
+            for (i = 1; i <= a; i++) {
+
+                x = y;
+                y = z;
+                z = x + y;
+
+                if (x % 5 == 0) {
+                    alert('so dau tien trong day Fibonacci chia het cho 5 la' + ' ' + x);
+                    break;
+                }
+
+
+            }
+        }
+
+        function bai5() {
+            var a = +prompt('a=');
+            var x = 0;
+            var y = 1;
+            var z = x + y;
+            var sum = 0;
+
+            for (i = 1; i <= a; i++) {
+
+                x = y;
+                y = z;
+                z = x + y;
+
+                sum += x;
+
+            }
+            alert(sum)
+        }
+        function bai6() {
+            var count = 0;
+
+            var sum = 0;
+            for (i = 1; ; i++)
+                if (i % 7 == 0) {
+                    sum += i;
+                    count++;
+                    if (count == 30) { break; }
+                }
+
+
+            alert(sum);
+        }
+
+        function bai7() {
+
+            for (i = 1; i <= 100; i++) {
+                if (i % 3 == 0 && i % 5 != 0) (document.write('i = ' + i + " ,Fizz <br>"))
+                if (i % 5 == 0 && i % 3 != 0) (document.write('i = ' + i + " ,Buzz <br>"))
+                if (i % 3 == 0 && i % 5 == 0) (document.write(' i = ' + i + ' ,FizzBuzz <br>'))
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
