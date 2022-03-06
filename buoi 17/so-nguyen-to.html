@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        var n = +prompt('n=');
+        var text = '';
+        var snt;
+        var count = 0;
+    
+
+        for (N=3; ; N++) {
+            for (i = 2; i < N; i++) {
+                if (N % i == 0) {
+                    snt = false;
+                    break;
+                }
+                else { snt = true; }
+
+            }
+            if (snt ==true) {
+                document.write ( N + ' la so nguyen to <br>');
+                count++;
+
+            }
+                if (count == n){break;}
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
