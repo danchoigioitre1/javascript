@@ -144,9 +144,19 @@
         function bai7() {
 
             for (i = 1; i <= 100; i++) {
-                if (i % 3 == 0 && i % 5 != 0) (document.write('i = ' + i + " ,Fizz <br>"))
-                if (i % 5 == 0 && i % 3 != 0) (document.write('i = ' + i + " ,Buzz <br>"))
-                if (i % 3 == 0 && i % 5 == 0) (document.write(' i = ' + i + ' ,FizzBuzz <br>'))
+                // if (i % 3 == 0 && i % 5 != 0) (document.write('i = ' + i + " ,Fizz <br>"))
+                // if (i % 5 == 0 && i % 3 != 0) (document.write('i = ' + i + " ,Buzz <br>"))
+                // if (i % 3 == 0 && i % 5 == 0) (document.write('i = ' + i + ' ,FizzBuzz <br>'))
+
+                if (i % 3 == 0 && i % 5 == 0) (
+                    document.write('i = ' + i + ' ,FizzBuzz <br>')
+                )
+                else if (i % 3 == 0) {
+                    document.write('i = ' + i + " ,Fizz <br>")
+                }
+                else if (i % 5 == 0) {
+                    document.write('i = ' + i + ' ,Buzz <br>')
+                }
 
             }
         }
