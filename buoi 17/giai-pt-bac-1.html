@@ -9,13 +9,118 @@
 </head>
 
 <body>
-    <h3><input type="text" style="width: 30px;">x+<input style="width: 30px;" type="text">=0</h3>
-    <br>
-    <button onclick="timX()"> tim X</button>
-    <br>
-<h3 id="kq"></h3>
-    
+    <div style="width: 190px; height: 190px; border: 1px solid black; position: relative" id="battleFiled">
+        <div style="top: 19px; left: 38px;width: 19px; height: 19px; background-image: url('https://s3.ap-southeast-1.amazonaws.com/learn.codegym.vn/media/public/2020/12/04175511/tank-1.png');background-size: 100% 100%;position: absolute;"
+            id="tank">
+        </div>
+        <div style="top: 76px; left: 133px;width: 19px; height: 19px; background-image: url('https://s3.ap-southeast-1.amazonaws.com/learn.codegym.vn/media/public/2020/12/04175453/boom.png');background-size: 100% 100%;position: absolute;"
+            id="boom">
+        </div>
 
+    </div>
+    <table>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="moveUp()">⬆</button>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="moveLeft()">⬅</button>
+            </td>
+            <td></td>
+            <td>
+                <button onclick="moveRight()">➡</button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="moveDown()">⬇</button>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    <script>
+
+        function moveUp() {
+            let a = document.getElementById("tank").style.top;
+            let a1 = parseInt(a);
+            let b = document.getElementById("tank").style.left;
+            let b1 = parseInt(b);
+            let c = document.getElementById("boom").style.top;
+            let c1 = parseInt(c);
+            let d = document.getElementById("boom").style.left;
+            let d1 = parseInt(d);
+            a1 -= 19;
+            if (a1 >= 0) {
+                if (a1==c1 && b1==d1) {
+                    document.getElementById("tank").style.backgroundImage = "url('https://s3.ap-southeast-1.amazonaws.com/learn.codegym.vn/media/public/2020/12/04175504/explosion.png')"
+                    document.getElementById("boom").style.display = "none"
+                }
+                document.getElementById("tank").style.top = a1 + "px"
+            }
+            
+        }
+        function moveDown() {
+            let a = document.getElementById("tank").style.top;
+            let a1 = parseInt(a);
+            let b = document.getElementById("tank").style.left;
+            let b1 = parseInt(b);
+            let c = document.getElementById("boom").style.top;
+            let c1 = parseInt(c);
+            let d = document.getElementById("boom").style.left;
+            let d1 = parseInt(d);
+            a1 += 19;
+            if (a1 <= 171) {
+                if (a1==c1 && b1==d1) {
+                    document.getElementById("tank").style.backgroundImage = "url('https://s3.ap-southeast-1.amazonaws.com/learn.codegym.vn/media/public/2020/12/04175504/explosion.png')"
+                    document.getElementById("boom").style.display = "none"
+                }
+                document.getElementById("tank").style.top = a1 + "px"
+            }
+            console.log(a1)
+        }
+        function moveRight() {
+            let a = document.getElementById("tank").style.top;
+            let a1 = parseInt(a);
+            let b = document.getElementById("tank").style.left;
+            let b1 = parseInt(b);
+            let c = document.getElementById("boom").style.top;
+            let c1 = parseInt(c);
+            let d = document.getElementById("boom").style.left;
+            let d1 = parseInt(d);
+            b1 += 19;
+            if (b1 <= 171) {
+                if (a1==c1 && b1==d1) {
+                    document.getElementById("tank").style.backgroundImage = "url('https://s3.ap-southeast-1.amazonaws.com/learn.codegym.vn/media/public/2020/12/04175504/explosion.png')"
+                    document.getElementById("boom").style.display = "none"
+                }
+                document.getElementById("tank").style.left = b1 + "px"
+            }
+        }
+        function moveLeft() {
+            let a = document.getElementById("tank").style.top;
+            let a1 = parseInt(a);
+            let b = document.getElementById("tank").style.left;
+            let b1 = parseInt(b);
+            let c = document.getElementById("boom").style.top;
+            let c1 = parseInt(c);
+            let d = document.getElementById("boom").style.left;
+            let d1 = parseInt(d);
+            b1 -= 19;
+            if (b1 >= 0) {
+                if (a1==c1 && b1==d1) {
+                    document.getElementById("tank").style.backgroundImage = "url('https://s3.ap-southeast-1.amazonaws.com/learn.codegym.vn/media/public/2020/12/04175504/explosion.png')"
+                    document.getElementById("boom").style.display = "none"
+                }
+                document.getElementById("tank").style.left = b1 + "px"
+            }
+        }
+
+    </script>
 </body>
 
 </html>
