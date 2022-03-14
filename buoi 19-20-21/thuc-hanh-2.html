@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="txt">
+    <button onclick="find()">Find</button>
+
+    <script>
+        var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4];
+        function find() {
+            var x = document.getElementById("txt").value;
+            var viTri;
+            var count = 0;
+            var index = false ;
+            for (i = 0; i < arr.length; i++) {
+
+                if (x == arr[i]) {
+                    count++;
+                    index = true;
+                    document.write(arr[i] + " have index is " + " " + i + "<br>");
+
+                } 
+               
+
+
+            }
+
+            if (index == true) {
+                document.write("have " + count + " element " + x);
+            } else {
+                document.write("no element in array")
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
