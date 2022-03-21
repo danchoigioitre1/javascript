@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="name"><button onclick="them()">Thêm</button>
+    <div id="amount"></div>
+    <div id="list"></div>
+    <div id="edit"></div>
+
+    <script>
+        let soLuong = document.getElementById('amount');
+        let ds = document.getElementById('list');
+        let ten = document.getElementById('name');
+        let sua1 = document.getElementById('edit');
+        let products = ['IP13', 'S22Ultra', 'ZFlip', 'IP14', 'RealMe'];
+        hien();
+
+        function them() {
+            let t = ten.value;
+            products.push(t);
+            console.log(products);
+            hien();
+            ten.value = "";
+        }
+
+        function hien() {
+            soLuong.innerHTML = products.length + " sản phẩm";
+            let str = "";
+            for (let i = 0; i < products.length; i++) {
+                str = str + products[i] + "<button onclick='sua("+i+")'>Edit</button><button onclick = 'xoa("+i+")'>Delete</button><br>";
+            }
+            ds.innerHTML = str;
+        }
+
+        function xoa(viTri) {
+            products.splice(viTri, 1);
+            hien();
+        }
+
+        function sua(viTri) {
+            sua1.innerHTML = '<input type="text" id="nameEdit" value="'+products[viTri]+'"><button onclick="luu('+viTri+')">Lưu</button>';
+        }
+
+        function luu(viTri) {
+            let newName = document.getElementById('nameEdit').value;
+            products[viTri] = newName;
+            hien();
+            sua1.innerHTML = "";
+        }
+
+    </script>
+</body>
+
+</html>

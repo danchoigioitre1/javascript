@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        let arr2 = [
+            [1, 2, 3],
+            [3, 4, 5],
+            [11, 21, 31, 41, 51]
+        ];
+
+        for (let i = 0; i < arr2.length; i++) {
+            for (let j = 0; j < arr2[i].length; j++) {
+                if (arr2[i][j] % 2 == 0) {
+                    document.write(arr2[i][j]);
+                }
+            }
+            document.write('<br>');
+        }
+
+        var sum = 0;
+
+        for (let i = 0; i < arr2.length; i++) {
+            for (let j = 0; j < arr2[i].length; j++) {
+                sum = sum + arr2[i][j];
+            }
+        }
+        document.write(sum);
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+
+
+        var time = 1;
+
+        for (let i = 0; i < arr2.length; i++) {
+            for (let j = 0; j < arr2[i].length; j++) {
+                if (arr2[i][j] % 3 == 2) {
+                    time *= arr2[i][j];
+                }
+            }
+        }
+
+        document.write(time);
+
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+        var max = arr2[0][0];
+
+        for (let i = 0; i < arr2.length; i++) {
+            for (let j = 0; j < arr2[i].length; j++) {
+                if (arr2[i][j] >= max) {
+                    max = arr2[i][j];
+                }
+            }
+        }
+        document.write(max);
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+
+
+        var count = 0;
+        for (let i = 0; i < arr2.length; i++) {
+            for (let j = 0; j < arr2[i].length; j++) {
+                if (arr2[i][j] % 5 == 1) {
+                    count++;
+                }
+            }
+        }
+        document.write(count);
+
+    </script>
+</body>
+
+</html>

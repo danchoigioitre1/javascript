@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1>bai 1:giai phuong trinh Ax+B=0</h1>
+        <h3><input type="number" id="a">x+<input type="number" id="b">=0</h3>
+        <button onclick="giaiPT()">giaiPT</button>
+        <h3 id="rs"></h3>
+        <script>
+            function giaiPT() {
+                var A = +document.getElementById("a").value;
+                var B = +document.getElementById("b").value;
+                var kq = document.getElementById("rs");
+                if (A == 0) {
+                    if (B == 0) { kq.innerHTML = ("PT vo so nghiem"); }
+                    if (B != 0) { kq.innerHTML = ("pt vo nghiem") }
+
+                } else {
+                    kq.innerHTML = ("nghiem cua pt la: x =  " + (-B / A));
+                }
+
+            }
+
+
+        </script>
+
+
+        <hr>
+        <h1>bai 2:Tim vi tri cuar phan tu trong mang</h1>
+        <h3 id="Arr"></h3>
+        <input type="text" name="" id="pt">
+        <button onclick="find()">tim vi tri </button>
+        <h3 id="bai2"></h3>
+        <script>
+            var Arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+            var phanTu = +document.getElementById("pt").value;
+            document.getElementById("Arr").innerHTML = Arr;
+            function find() {
+                for (i = 0; i < Arr.length; i++) {
+                    if (phanTu == Arr[i]) {
+                        document.getElementById("bai2").innerHTML = "vi tri phan tu " + " " + phanTu + " la:" + i;
+
+                    }
+
+                }
+
+            }
+
+
+        </script>
+
+
+
+        <hr>
+        <h1>bai 3:dem so thu tu nguyen am</h1>
+        <h3 id="title"></h3>
+
+
+        <script>
+            var arr = ["h", "o", "m", "n", "a", "y", "t", "r", "o", "i ", "m", "u", "a", "t", "o", "q", "u", "a"];
+
+
+
+
+            function timNguyenAm(tim) {
+                var tim = false;
+                for (i = 0; i < arr.length; i++) {
+                    if (arr[i] == "a" || arr[i] == "o" || arr[i] == "e" || arr[i] == "u" || arr[i] == "i") {
+
+                        tim = true;
+                      
+                    }
+
+                  
+                }
+                return tim;
+
+            }
+            if (timNguyenAm(arr) == false) {
+                alert("Không có kí tự nguyên âm nào");
+            }
+            else {
+                alert("Có kí tự nguyên âm");
+            }
+
+
+
+
+        </script>
+
+
+
+
+    </body>
+
+    </html>
+</body>
+
+</html>
