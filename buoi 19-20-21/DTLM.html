@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style id="bd">
+        #no {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        h1 {
+            text-align: center;
+            vertical-align: center;
+        }
+
+        .btn {
+            display: block;
+            width: 150px;
+            margin: auto;
+
+        }
+
+        .btn button {
+            transform: scale(1.5);
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <h1>Do you love me ???</h1>
+
+    <div class="btn">
+        <button onclick="yes()">yes</button>
+        <button id="no" onmouseover="move()">no</button>
+    </div>
+
+    <script>
+        function move() {
+            let no = document.getElementById("no");
+            no.style.left = Math.random() * 500 + "px";
+            no.style.top = Math.random() * 500 + "px";
+        }
+        
+           document.getElementById('body').style.background = 'url("https://scontent.fhan15-1.fna.fbcdn.net/v/t39.30808-6/277002391_1176624983095229_6114951279542956591_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=e3f864&_nc_ohc=AKhjDd0oxB0AX-6BujH&_nc_ht=scontent.fhan15-1.fna&oh=00_AT-Khvcx3iqdTWubstiBZXFeuyh7y_1lXc-TFw1zgJgshg&oe=6243F9FB")'; 
+        
+           document.getElementById('body').style.backgroundSize = 'cover';
+
+
+           function yes(){
+               alert('ok!!! CHIA TAY BRO !!!')
+           }
+           
+    </script>
+</body>
+
+</html>

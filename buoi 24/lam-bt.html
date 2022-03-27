@@ -20,7 +20,7 @@
     </head>
 
     <body>
-        <h1>bai 1:giai phuong trinh Ax+B=0</h1>
+        <!-- <h1>bai 1:giai phuong trinh Ax+B=0</h1>
         <h3><input type="number" id="a">x+<input type="number" id="b">=0</h3>
         <button onclick="giaiPT()">giaiPT</button>
         <h3 id="rs"></h3>
@@ -43,24 +43,31 @@
         </script>
 
 
-        <hr>
-        <h1>bai 2:Tim vi tri cuar phan tu trong mang</h1>
-        <h3 id="Arr"></h3>
-        <input type="text" name="" id="pt">
+        <hr> -->
+
+        <h1>bai 2:Tim vi tri cua phan tu trong mang</h1>
+
+        <input type="text" id="Ptu">
         <button onclick="find()">tim vi tri </button>
-        <h3 id="bai2"></h3>
+
         <script>
             var Arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-            var phanTu = +document.getElementById("pt").value;
-            document.getElementById("Arr").innerHTML = Arr;
+
+
+            var rs;
+
+
             function find() {
+                var so = +document.getElementById("Ptu").value;
                 for (i = 0; i < Arr.length; i++) {
-                    if (phanTu == Arr[i]) {
-                        document.getElementById("bai2").innerHTML = "vi tri phan tu " + " " + phanTu + " la:" + i;
+                    if (so == Arr[i]) {
+                        rs = i;
 
+                    } else {
+                        rs = "khog co";
                     }
-
                 }
+                alert(rs);
 
             }
 
@@ -68,7 +75,7 @@
         </script>
 
 
-
+        <!-- 
         <hr>
         <h1>bai 3:dem so thu tu nguyen am</h1>
         <h3 id="title"></h3>
@@ -86,10 +93,10 @@
                     if (arr[i] == "a" || arr[i] == "o" || arr[i] == "e" || arr[i] == "u" || arr[i] == "i") {
 
                         tim = true;
-                      
+
                     }
 
-                  
+
                 }
                 return tim;
 
@@ -105,7 +112,7 @@
 
 
         </script>
-
+ -->
 
 
 
