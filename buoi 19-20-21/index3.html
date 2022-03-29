@@ -18,7 +18,7 @@
         alt="" style="width: 200px; position: relative; left: 100px; top: 300px;">
     <script>
         let phu = document.getElementById('anh');
-        window.addEventListener('keydown', (evt) => {
+        document.addEventListener('keydown',(evt) => {
             console.log(evt);
             if (evt.key == "ArrowRight") {
                 phu.style.left = parseInt(phu.style.left) + 10 + 'px';
