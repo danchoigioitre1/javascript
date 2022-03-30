@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <h1 id="time"></h1>
+    <script>
+        let str = 'abc23cba';
+        var rs=true;
+        for (i = 0; i < str.length; i++) {
+            if (str[i] != str[str.length - 1  - i]) {
+                rs = false;
+                break;
+            } 
+        }
+        if (rs == true) {
+alert("doi xung")
+        }else{ alert("khong doi xung")}
+
+    </script> -->
+
+<script>
+
+function ktraChuoi(ch) {
+            if(ch.length == 0 || ch.length == 1){
+                return true;
+            }
+            if(ch[0] != ch[ch.length-1]){
+                return false;
+            }
+
+            return ktraChuoi(ch.slice(1, ch.length-1));
+        }
+alert(ktraChuoi('abasdasdba'))
+</script>
+
+
+</body>
+
+</html>
