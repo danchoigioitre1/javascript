@@ -14,11 +14,16 @@
 </head>
 
 <body id="bd">
-    <img id="anh" src="https://atlas-content-cdn.pixelsquid.com/stock-images/multicolor-soccer-ball-oJVn048-600.jpg"
-        alt="" style="width: 200px; position: relative; left: 100px; top: 300px;">
+    <div style="width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    padding: 0;">
+        <img id="anh" src="https://atlas-content-cdn.pixelsquid.com/stock-images/multicolor-soccer-ball-oJVn048-600.jpg"
+            alt="" style="width: 200px; position: relative; left: 0px; top: 0px; z-index: -1; margin: 0;">
+    </div>
     <script>
         let phu = document.getElementById('anh');
-        document.addEventListener('keydown',(evt) => {
+        document.addEventListener('keydown', (evt) => {
             console.log(evt);
             if (evt.key == "ArrowRight") {
                 phu.style.left = parseInt(phu.style.left) + 10 + 'px';
@@ -35,6 +40,9 @@
             if (evt.key == "z") {
                 phu.style.left = parseInt(phu.style.left) - 10 + 'px';
                 phu.style.top = parseInt(phu.style.top) + 10 + 'px';
+            }
+            if (parseInt(phu.style.left) < 0) {
+                phu.style.left = "350px"
             }
         })
     </script>

@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Racing Game</title>
 </head>
-
 <body>
-    <h1 id="time"></h1>
-    <script>
-        let count = 0
-        function print() {
-            count++;
-            document.getElementById("time").innerHTML = (count);
-        }
-        setInterval(print, 1000);
-    </script>
+  <canvas id="game" width="800" height="600" style="border: 3px solid #000000"></canvas>
 
+  <script>
+    let gameContext = document.getElementById("game").getContext("2d");
+
+    let carYPosition = 20;
+    let carXPosition = 20;
+
+    let carWidth = 150;
+    let carHeight = 100;
+
+    let gameTopPosition = 0;
+    let gameBottomPosition = 600;
+    let timeLoop = 1;
+
+    function drawCar() {
+      gameContext.beginPath();
+      gameContext.fillStyle='red';
+      gameContext.fillRect(carXPosition, carYPosition, carWidth, carHeight);
+    }
+
+    let yDistance = 10;
+    function moveCar() {
+      gameContext.clearRect(carXPosition, carYPosition, carWidth, carHeight);
+
+    
+      let isTouchTop = carYPosition < gameTopPosition;
+      let isTouchBottom = carYPosition + carHeight > gameBottomPosition;
+      if (isTouchTop || isTouchBottom) {
+        yDistance = -yDistance;
+      }
+
+      carYPosition += yDistance;
+      drawCar();
+    }
+    setInterval(moveCar, timeLoop);
+  </script>
 </body>
-
 </html>
