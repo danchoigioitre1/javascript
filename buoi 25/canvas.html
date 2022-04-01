@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Racing Game</title>
 </head>
+
 <body>
   <canvas id="game" width="800" height="600" style="border: 3px solid #000000"></canvas>
 
@@ -22,15 +24,15 @@
 
     function drawCar() {
       gameContext.beginPath();
-      gameContext.fillStyle='red';
+      gameContext.fillStyle = 'red';
       gameContext.fillRect(carXPosition, carYPosition, carWidth, carHeight);
     }
 
-    let yDistance = 10;
+    let yDistance = 3;
     function moveCar() {
-      gameContext.clearRect(carXPosition, carYPosition, carWidth, carHeight);
+      gameContext.clearRect(carXPosition, carYPosition, carWidth, carHeight);  
 
-    
+
       let isTouchTop = carYPosition < gameTopPosition;
       let isTouchBottom = carYPosition + carHeight > gameBottomPosition;
       if (isTouchTop || isTouchBottom) {
@@ -43,4 +45,5 @@
     setInterval(moveCar, timeLoop);
   </script>
 </body>
+
 </html>
