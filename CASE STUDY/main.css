@@ -10,9 +10,10 @@ body {
     background: url('https://i.pinimg.com/originals/cb/c2/2c/cbc22ca5a3d7568a742262639a9f6b3f.jpg');
 object-fit: cover;
 }
-.btn {display: block;
-margin: auto;
-margin-bottom: 10px;}
+.button-select {display: flex;
+justify-content:space-around;
+
+}
  .point{
      width: 40%;
      float: right;

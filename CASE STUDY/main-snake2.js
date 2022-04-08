@@ -162,18 +162,28 @@ class SNAKE {
         for (let i = 1; i < this.body.length; i++) {
             if (this.head.x == this.body[i].x && this.head.y == this.body[i].y) {
                 alert('Bạn được ' + this.count + ' điểm');
-                let name = prompt( "nhập tên người chơi:");
-                
-                document.getElementById('name').innerHTML = name+=name + ':' +this.count + ' điểm <br>';
+                location.reload();
+                // let name = prompt("nhập tên người chơi:");
 
+                // document.getElementById('name').innerHTML = name += name + ':' + this.count + ' điểm <br>';
+               
 
             }
 
         }
     }
 
+
 }
-function play() {
+
+
+function normal() {
+    let fps = 100;
+}
+function hard() {
+    let fps = 50;
+}
+function playEasy() {
 
     window.addEventListener('keydown', (evt) => {
         console.log(evt);
@@ -205,7 +215,7 @@ function play() {
     }
     )
 
-
+    let fps = 200;
     let player = new SNAKE();
     player.draw();
     setInterval(() => {
@@ -217,7 +227,7 @@ function play() {
             document.getElementById('results').innerHTML = player.count;
 
         }
-    }, 200)
+    }, fps)
 
     let food = new Food()
     food.spawn();
@@ -237,3 +247,134 @@ function play() {
         player.body.y = 0;
     }
 }
+
+function playHard() {
+
+    window.addEventListener('keydown', (evt) => {
+        console.log(evt);
+        if (evt.key == "ArrowDown" && player.speed.y != -1) {
+            player.speed.x = 0;
+            player.speed.y = 1;
+
+        }
+
+        if (evt.key == "ArrowUp" && player.speed.y != 1) {
+            player.speed.x = 0;
+            player.speed.y = -1;
+
+        }
+
+        if (evt.key == "ArrowRight" && player.speed.x != -1) {
+            player.speed.x = 1;
+            player.speed.y = 0;
+
+        }
+
+        if (evt.key == "ArrowLeft" && player.speed.x != 1) {
+            player.speed.x = -1;
+            player.speed.y = 0;
+
+        }
+
+
+    }
+    )
+
+    let fps = 50;
+    let player = new SNAKE();
+    player.draw();
+    setInterval(() => {
+        player.move()
+        if (player.checkEat(food)) {
+            player.growUp();
+            food.spawn();
+            player.count++;
+            document.getElementById('results').innerHTML = player.count;
+
+        }
+    }, fps)
+
+    let food = new Food()
+    food.spawn();
+
+
+    if (player.body.x < 0) {
+        player.body.x = canvas.width - UNIT;
+    }
+    if (player.body.x > canvas.width) {
+        player.body.x = 0;
+    }
+
+    if (player.body.y < 0) {
+        player.body.y = canvas.height - UNIT;
+    }
+    if (player.body.y > canvas.height) {
+        player.body.y = 0;
+    }
+}
+
+function playNormal() {
+
+    window.addEventListener('keydown', (evt) => {
+        console.log(evt);
+        if (evt.key == "ArrowDown" && player.speed.y != -1) {
+            player.speed.x = 0;
+            player.speed.y = 1;
+
+        }
+
+        if (evt.key == "ArrowUp" && player.speed.y != 1) {
+            player.speed.x = 0;
+            player.speed.y = -1;
+
+        }
+
+        if (evt.key == "ArrowRight" && player.speed.x != -1) {
+            player.speed.x = 1;
+            player.speed.y = 0;
+
+        }
+
+        if (evt.key == "ArrowLeft" && player.speed.x != 1) {
+            player.speed.x = -1;
+            player.speed.y = 0;
+
+        }
+
+
+    }
+    )
+
+    let fps = 100;
+    let player = new SNAKE();
+    player.draw();
+    setInterval(() => {
+        player.move()
+        if (player.checkEat(food)) {
+            player.growUp();
+            food.spawn();
+            player.count++;
+            document.getElementById('results').innerHTML = player.count;
+
+        }
+    }, fps)
+
+    let food = new Food()
+    food.spawn();
+
+
+    if (player.body.x < 0) {
+        player.body.x = canvas.width - UNIT;
+    }
+    if (player.body.x > canvas.width) {
+        player.body.x = 0;
+    }
+
+    if (player.body.y < 0) {
+        player.body.y = canvas.height - UNIT;
+    }
+    if (player.body.y > canvas.height) {
+        player.body.y = 0;
+    }
+}
+

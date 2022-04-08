@@ -16,12 +16,12 @@
 
 <body>
 
-    <h1 id="results">0</h1> 
-    <button id="easy">dễ </button>
-    <button id="normal">trung bình </button>
-    <button id="hard">khó </button>
-    <button onclick="play()" type="button" class="btn btn-success">play</button>
-
+    <h1 id="results">0</h1>
+    <div class="button-select">
+        <button onclick="playEasy()" type="button" class="btn btn-success">play : easy</button>
+        <button onclick="playNormal()" type="button" class="btn btn-success">play : normal</button>
+        <button onclick="playHard()" type="button" class="btn btn-success">play : hard</button>
+    </div>
     <div class="point">
         <h1>danh sách điểm</h1>
         <h1 id="name">
