@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="lightDark()"> Switch Button</button>
+
+    <h2 id="rs"> </h2>
+    <script>
+        class SwitchButton {
+            status;
+            lamp;
+            constructor() {
+                this.status;
+                this.lamp;
+            }
+
+            connectToLamp(ElectricLamp) {
+                ElectricLamp.status = this.status;
+
+            }
+
+            switchOn() {
+                this.status = true;
+                return this.status;
+            }
+            switchOff() {
+                this.status = false;
+                return this.status;
+            }
+
+
+        }
+
+        class ElectricLamp {
+            static;
+            constructor() { this.status; }
+
+            light() {
+                if (this.status) {
+                    document.getElementById("rs").innerHTML  = "đèn đang bật";
+                } else {
+                    document.getElementById("rs").innerHTML  = "đèn đang tắt";
+                }
+            };
+
+
+        };
+
+        let Btn = new SwitchButton();
+        let Lamp = new ElectricLamp();
+        let count = -1;
+        function lightDark() {
+            count = -count;
+            if (count == 1){
+                Btn.switchOn();
+               Btn.connectToLamp(Lamp);
+               Lamp.light();
+            }else{
+
+                 Btn.switchOff();
+               Btn.connectToLamp(Lamp);
+               Lamp.light();
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
