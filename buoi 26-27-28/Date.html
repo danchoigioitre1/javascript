@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class MyDate {
+
+            day;
+            month;
+            year;
+
+            constructor(day, month, year) {
+
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+
+
+            getDay() {
+                return this.day;
+            }
+            getMonth() {
+                return this.month;
+            }
+            getYear() {
+                return this.year;
+            }
+
+            setDay(day) {
+                this.day = day;
+                return this.day;
+            }
+            setMonth(month) {
+                this.month = month;
+                return this.month;
+            }
+            setYear(year) {
+                this.year = year;
+                return this.year;
+            }
+
+            setDate(d, m, y) {
+                this.day = d;
+                this.month = m;
+                this.year = y;
+                let time = [this.day, this.month, this.year];
+                return time;
+            }
+            toString(time) {
+                let Time = time.join("/")
+                return Time
+            }
+
+
+        }
+
+        let date = new MyDate(2, 2, 2007);
+
+        // let day = date.getDay(); // 2
+        // let month = date.getMonth(); // 2
+        // let year = date.getYear(); // 2007
+
+        // console.log(day + "/" + month + "/" + year);
+
+        // let day = date.setDay(10);
+        // let month = date.setMonth(10);
+        // let year = date.setYear(2019);
+        // console.log(day + "/" + month + "/" + year);
+
+
+        dmy = date.setDate(11, 01, 2001);
+        newTime = date.toString(dmy);
+        console.log(newTime);
+    </script>
+</body>
+
+</html>
