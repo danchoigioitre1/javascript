@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+
+        ctx = document.getElementById('canvas').getContext("2d");
+        class Rectangle {
+            toaDoX;
+            toaDoY;
+            width;
+            height;
+            color;
+            constructor(toaDoX, toaDoY, width, height, color) {
+                this.toaDoX = toaDoX;
+                this.toaDoY = toaDoY;
+                this.width = width;
+                this.height = height;
+                this.color = color;
+            }
+
+            chuVi() {
+                return (this.height + this.width) * 2;
+            }
+            dienTich() {
+                return this.width * this.height;
+            }
+
+            display() {
+
+                ctx.fillStyle = this.color;
+                ctx.fillRect(this.toaDoX, this.toaDoY, this.width, this.height);
+            }
+        }
+
+        let hcn = new Rectangle(10, 10, 50, 100, 'red');
+        console.log(hcn.chuVi());
+        console.log(hcn.dienTich());
+        hcn.display();
+    </script>
+</body>
+
+</html>
