@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <center>
+        <h1>nhấp vào đi</h1>
+        <textarea name="" id="inp" cols="50" rows="20" onkeydown="typing()"></textarea>
+
+
+    </center>
+
+    <script>
+        let = str = "tôi rất pro !!!"
+        let txtArea = document.getElementById("inp");
+        let res = "";
+        let inDEx = 0;
+        function typing() {
+            res += str[inDEx];
+            inDEx++;
+if ( inDEx > str.length){
+    res = '';
+    inDEx = 0;
+}
+            txtArea.value = res;
+        }
+    </script>
+</body>
+
+</html>
