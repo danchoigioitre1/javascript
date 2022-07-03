@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.0/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        function Button({  className, title, href, onClick }) {
+            let Component = 'button'
+            let props = {className}
+            if (href) {
+                Component = 'a'
+                props.href = href
+                return (< Component  {...props} > {title} </Component >
+                )
+            }
+            if (onClick) {
+                props.onClick = onClick
+                return (
+                    < Component {...props}> {title} </Component >
+                )
+            }
+        }
+        function App() {
+
+
+
+            return (
+                <div id="wrapper">
+                    <Button
+                        title="Click me!!!"
+                        href="https://fullstack.edu.vn/learning/javascript-co-ban?id=d802fdf1-83dc-43f6-8b8c-1bc424f98c2b"
+                        onClick={() => { console.log(Math.random()); }}
+                        className='btn btn-primary'
+                    />
+                </div>
+            )
+        }
+
+
+
+
+        const root = document.getElementById('root')
+        ReactDOM.render(<App />, root)
+    </script>
+</body>
+
+</html>

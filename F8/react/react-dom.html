@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.0/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js" crossorigin></script>
+
+</head>
+
+<body>
+    <h1 id="root"></h1>
+
+
+    <script>
+        //DOM
+        // let ul = document.createElement('ul');
+        // let li1 = document.createElement('li');
+        // let li2 = document.createElement('li');
+        // li1.innerHTML = 'JS';
+        // li2.innerHTML = 'REACT'
+        // ul.appendChild(li1);
+        // ul.appendChild(li2);
+
+        // document.body.appendChild(ul);
+
+
+
+
+
+        //REACT.createElement();
+        //     let reactUl = React.createElement('ul',
+        //         {
+        //             id: 'head',
+        //             title: 'heading',
+        //             className: 'cls',
+        //             style: 'color:red,font-size:30px'
+        //         },
+        //         React.createElement('li', null, 'JS'),
+        //         React.createElement('li', null, 'REACT')
+        //     )
+
+
+        //    let root = document.getElementById('root');
+        //     ReactDOM.render(reactUl, root,);
+
+
+
+
+
+        let reactUl = React.createElement('div',
+            {
+                id: 'head',
+                title: 'heading',
+                className: 'cls',
+
+
+            },
+            React.createElement('p', {
+                id: 'para',
+
+            }, 'JS'),
+            React.createElement('h2', {}, 'REACT')
+        )
+
+        let container = document.getElementById('root');
+        ReactDOM.render(reactUl, container);
+
+        // REACT @18
+        // let container = document.getElementById('root')
+        // let root = ReactDOM.createRoot(container)
+        // root.render(reactUl)
+
+
+    </script>
+</body>
+
+</html>
